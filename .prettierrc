@@ -1,0 +1,8 @@
+{
+    "semi": false,
+    "trailingComma": "all",
+    "printWidth": 200,
+    "disableNewLineEOF": "always",
+    "bracketSameLine": true
+  }
+  

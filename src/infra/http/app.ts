@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(cookieParser())
 
-app.get("/", (req, res) => {
+app.get("/healthz", (req, res) => {
   res.send("yo i'm up")
 })
 

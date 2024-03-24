@@ -1,0 +1,32 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GenericAppError = void 0;
+const Result_1 = require("./Result");
+var GenericAppError;
+(function (GenericAppError) {
+    class UnexpectedError extends Result_1.Result {
+        constructor(err) {
+            super(false, {
+                message: `An unexpected error occurred.`,
+                error: err,
+            });
+            console.log(`[AppError]: An unexpected error occurred`);
+            console.error(err);
+        }
+        static create(err) {
+            return new UnexpectedError(err);
+        }
+    }
+    GenericAppError.UnexpectedError = UnexpectedError;
+    class InputError extends Result_1.Result {
+        constructor(err) {
+            super(false, {
+                message: `${err}`,
+                error: err,
+            });
+            console.error(`InputError`, { err });
+        }
+    }
+    GenericAppError.InputError = InputError;
+})(GenericAppError = exports.GenericAppError || (exports.GenericAppError = {}));
+//# sourceMappingURL=AppError.js.map

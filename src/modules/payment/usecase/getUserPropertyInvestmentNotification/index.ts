@@ -1,0 +1,7 @@
+import { propertyInvestmentRepo } from "../../repo"
+import { GetUserPropertyInvestmentNotificationController } from "./getUserPropertyInvestmentNotificationController"
+import { GetUserPropertyInvestmentNotificationUseCase } from "./getUserPropertyInvestmentNotificationUseCase"
+
+const getUserPropertyInvestmentNotificationUseCase = new GetUserPropertyInvestmentNotificationUseCase(propertyInvestmentRepo)
+const getUserPropertyInvestmentNotificationController = new GetUserPropertyInvestmentNotificationController(getUserPropertyInvestmentNotificationUseCase)
+export { getUserPropertyInvestmentNotificationUseCase, getUserPropertyInvestmentNotificationController }
